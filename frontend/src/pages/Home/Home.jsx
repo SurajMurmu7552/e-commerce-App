@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
 import Card from "../../components/Card/Card";
@@ -7,8 +7,6 @@ import "./Home.css";
 
 export default function Home() {
   const dispatch = useDispatch();
-
-  const lastItem = useRef(0);
 
   const { data, page, status, end } = useSelector((state) => state.data);
 
@@ -34,7 +32,7 @@ export default function Home() {
 
   return (
     <div className="home">
-      <div className="home-container" ref={lastItem} onScroll={handleScroll}>
+      <div className="home-container" onScroll={handleScroll}>
         {data.map((item) => (
           <Card item={item} key={item.id} />
         ))}
