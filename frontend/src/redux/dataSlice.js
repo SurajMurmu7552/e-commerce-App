@@ -29,7 +29,17 @@ const dataSlice = createSlice({
     [getAllData.fulfilled]: (state, { payload }) => {
       state.status = "success";
       if (payload.data.length > 0) {
-        state.data = [...state.data, ...payload.data];
+        const temp = [];
+
+        payload.data.map((item) => {
+          if (state.data.findIndex((ele) => ele.id === item.id) === -1) {
+            temp.push(item);
+          }
+          return null;
+        });
+
+        state.data = [...state.data, ...temp];
+
         state.end = payload.end;
       }
     },

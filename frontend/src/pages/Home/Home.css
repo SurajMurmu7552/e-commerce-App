@@ -45,3 +45,12 @@
   justify-content: flex-start;
   overflow-y: scroll;
 }
+
+@media screen and (min-width: 1200px) {
+  .home-container {
+    height: 90vh;
+    padding: 0 150px;
+    width: 100%;
+    background-color: #fff;
+  }
+}

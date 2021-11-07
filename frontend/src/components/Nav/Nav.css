@@ -17,14 +17,18 @@
 /* nav heading  */
 .nav-heading {
   font-size: 1.5rem;
-  font-weight: 500;
+  font-weight: 700;
+  cursor: pointer;
 }
-
+.nav-heading > header > span {
+  color: rgb(30, 71, 255);
+}
 /* icon style  */
 .nav-icon {
   position: relative;
   height: 38px;
   width: 38px;
+  cursor: pointer;
 }
 .nav-icon > div {
   position: absolute;

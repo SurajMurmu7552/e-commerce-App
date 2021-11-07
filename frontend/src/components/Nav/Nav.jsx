@@ -20,7 +20,9 @@ export default function Nav() {
     <div className="nav">
       <div className="nav-container">
         <div className="nav-heading">
-          <header onClick={handleHomeLink}>FreshStock</header>
+          <header onClick={handleHomeLink}>
+            Fresh<span>Stock</span>
+          </header>
         </div>
         <div className="nav-icon" onClick={handleCartLink}>
           <div></div>

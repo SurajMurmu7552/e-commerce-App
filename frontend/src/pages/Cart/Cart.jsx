@@ -10,7 +10,7 @@ export default function Cart() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const { cart, total, delivery } = useSelector((state) => state.cart);
+  const { cart, total } = useSelector((state) => state.cart);
 
   function handleConfirm() {
     dispatch(confirmOrder());
@@ -48,10 +48,7 @@ export default function Cart() {
                   <p>Delivery</p>
                 </div>
                 <div className="order-price">
-                  <p>
-                    <span>&#8377;</span>
-                    {delivery}
-                  </p>
+                  <p>Free</p>
                 </div>
               </li>
               <li className="order-detail">
@@ -61,7 +58,7 @@ export default function Cart() {
                 <div className="order-price">
                   <p>
                     <span>&#8377;</span>
-                    {parseFloat(total) + parseFloat(delivery)}
+                    {parseFloat(total)}
                   </p>
                 </div>
               </li>
@@ -72,7 +69,7 @@ export default function Cart() {
           <div className="order-total">
             <p>
               <span>&#8377;</span>
-              {parseFloat(total) + parseFloat(delivery)}
+              {parseFloat(total)}
             </p>
           </div>
           <div className="confirm-order" onClick={handleConfirm}>
