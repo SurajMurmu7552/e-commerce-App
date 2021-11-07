@@ -24,13 +24,13 @@ app.get("/", (req, res) => {
         const temp = [];
         let end = false;
 
-        if (items * page <= jsonData.length) {
-          for (let index = items * (page - 1); index < items * page; index++) {
+        for (let index = items * (page - 1); index < items * page; index++) {
+          if (items * page <= jsonData.length) {
             temp.push(jsonData[index]);
           }
-          if (items * page >= jsonData.length) {
-            end = true;
-          }
+        }
+        if (items * page >= jsonData.length) {
+          end = true;
         }
 
         const pageData = {
